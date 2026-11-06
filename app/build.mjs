@@ -15,6 +15,7 @@ export const JS_ORDER = [
   "content/ch00-03.js",
   "content/ch04-06.js",
   "content/ch07-10.js",
+  "content/ch-reverse.js",
   "content/grad-data.js",
   "engine/store.js",
   "engine/ai.js",

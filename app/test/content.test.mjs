@@ -8,7 +8,7 @@ import vm from "node:vm";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const read = (p) => readFileSync(join(here, "..", "src", p), "utf8");
-const files = ["content/_helpers.js", "content/cards.js", "content/ch00-03.js", "content/ch04-06.js", "content/ch07-10.js", "content/grad-data.js"];
+const files = ["content/_helpers.js", "content/cards.js", "content/ch00-03.js", "content/ch04-06.js", "content/ch07-10.js", "content/ch-reverse.js", "content/grad-data.js"];
 const ctx = vm.createContext({});
 vm.runInContext(files.map(read).join("\n") + "\n;globalThis.__out = { COURSE, CARDS, GRAD_PRESETS, GRAD_EXAMPLE, TEST_QS };", ctx);
 const { COURSE, CARDS, GRAD_PRESETS, GRAD_EXAMPLE, TEST_QS } = ctx.__out;
@@ -21,9 +21,9 @@ test("章とレッスンのIDが重複していない", () => {
   assert.equal(new Set(COURSE.chapters.map((c) => c.id)).size, COURSE.chapters.length);
 });
 
-test("学習時間の合計が約6〜7時間（330〜430分）", () => {
+test("学習時間の合計が約7時間前後（330〜480分）", () => {
   const total = lessons.reduce((a, l) => a + l.min, 0);
-  assert.ok(total >= 330 && total <= 430, "合計 " + total + " 分");
+  assert.ok(total >= 330 && total <= 480, "合計 " + total + " 分");
 });
 
 test("型カードはすべてどこかのレッスンで手に入り、存在しないカードを参照していない", () => {

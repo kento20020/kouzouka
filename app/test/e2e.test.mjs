@@ -26,7 +26,7 @@ test("マップが表示され、エラーが出ない", async () => {
   const { browser, page, errors } = await open();
   await page.waitForSelector(".goal h1");
   assert.match(await page.textContent(".goal h1"), /L0からL5/);
-  assert.equal(await page.$$eval(".chap", (els) => els.length), 11);
+  assert.equal(await page.$$eval(".chap", (els) => els.length), 12);
   assert.deepEqual(errors, []);
   await browser.close();
 });
