@@ -115,7 +115,7 @@ flowchart LR
 
 ```bash
 npm install
-npm run check   # 型チェック + アプリのビルド + テスト（サンプル60件・アプリ23件）
+npm run check   # 型チェック + アプリのビルド + テスト（サンプル60件・アプリ28件）
 npm run spec    # sendState.ts から SPEC.md を作り直す
 ```
 

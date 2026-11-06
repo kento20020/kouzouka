@@ -62,3 +62,4 @@ node --test app/test/*.test.mjs   # アプリのテスト（実ブラウザで�
 - `interact.test.mjs`：付箋・表・ヒアリング・スタック・実験室・書く問題・卒業制作を、実際にクリックして操作
 - `e2e.test.mjs`：全49レッスンを最初から最後まで通し、記録が再読み込み後も残るか
 - `build.test.mjs`：`index.html` が `src/` から作り直したものと一致しているか
+- `artifact.test.mjs`：claude.ai の Artifact と同じ外枠で開き、アカウントへの記録保存（読み込み・書き込み）、赤ペンAI添削、ファイル保存が動くか（Claude 側の機能は代わりの部品で再現）
