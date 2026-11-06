@@ -8,10 +8,11 @@
     "node": ">=22.18"
   },
   "scripts": {
-    "test": "node --test \"examples/**/*.test.ts\"",
+    "test": "node --test \"examples/**/*.test.ts\" \"app/test/*.test.mjs\"",
     "typecheck": "tsc",
     "spec": "node examples/send-to-ai/spec-cli.ts > examples/send-to-ai/SPEC.md",
-    "check": "npm run typecheck && npm test"
+    "app:build": "node app/build.mjs",
+    "check": "npm run typecheck && npm run app:build && npm test"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",
